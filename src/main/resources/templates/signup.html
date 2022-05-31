@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.5.2/cosmo/bootstrap.min.css" />
+    <script src= "https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" ></script>
+</head>
+<body>
+<div>
+    <h2 >Registation Page</h2>
+    <table>
+    <tr>
+        <div align = "left" >
+            <h3><a  th:href="@{'/new'}">Add new</a></h3>
+        </div>
+    </tr>
+    <tr>
+        <div class="col-sm-5" align = "center">
+            <div class="panel-body" align = "center" >
+                <table class="table">
+                    <thead class="thead-dark">
+                    <tr>
+                        <th>UserID</th>
+                        <th>FName</th>
+                        <th>LName</th>
+                        <th>Email</th>
+                        <th>DOB</th>
+                        <th>MobileNo</th>
+                        <th>UserRole</th>
+                        <th>Balance</th>
+                        <th>Edit</th>
+                        <th>Delete</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr  th:each="user1 : ${listUser }">
+                        <td th:text="${user1.userId}">UserID</td>
+                        <td th:text="${user1.firstName}">FName</td>
+                        <td th:text="${user1.lastName}">LName</td>
+                        <td th:text="${user1.emailId}">Email</td>
+                        <td th:text="${user1.dob}">DOB</td>
+                        <td th:text="${user1.mobileNo}">MobileNo</td>
+                        <td th:text="${user1.userRole}">UserRole</td>
+                        <td th:text="${user1.balance}">Balance</td>
+                        <td>
+                            <a th:href="@{'/edit/' + ${user1.userId}}">Edit</a>
+                        </td>
+                        <td>
+                            <a th:href="@{'/delete/' + ${user1.userId}}">Delete</a>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </tr>
+    </table>
+</div>
+</body>
+</html>

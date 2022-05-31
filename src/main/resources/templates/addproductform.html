@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8" />
+    <title>Create New Registration</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.5.2/cosmo/bootstrap.min.css" />
+    <script src= "https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" ></script>
+</head>
+<body>
+<div align="center">
+    <h1>Register New </h1>
+    <br />
+    <div class="col-sm-4">
+        <form action="" th:action="@{ }" th:object="${user}" method="post">
+
+            <!-- Product Name field -->
+            <div >
+                <tr>
+                    <label class="form-label" >Product Name</label>
+                    <td>
+                        <input type="hidden" th:field="*{userId}" />
+                        <input type="text" th:field="*{productName}" class="form-control" placeholder="Product Name" />
+                    </td>
+                </tr>
+            </div>
+
+            <!-- Description field -->
+            <div class="form-group">
+                <tr>
+                    <label for="description_field">Your Description</label>
+                    <td>
+                        <input name="description"  type="descrition"  class="form-control"  id="description_field" placeholder="Enter Description Here" th:value="${description}" required/>
+                    </td>
+                </tr>
+            </div>
+
+            <!-- DOB field -->
+            <div class="form-group">
+                <tr>
+                    <label>Product image</label>
+                    <td>
+
+                    </td>
+                </tr>
+            </div>
+
+            <!-- Mobile Number field -->
+            <div class="form-group">
+                <tr>
+                    <label for="mobileNo_field">Your Mobile Number</label>
+                    <td>
+                        <input name="mobileNo"  type="mobileNo"  class="form-control"  id="mobileNo_field" placeholder="Enter Mobile Number Here" th:value="${mobileNo}" required/>
+                    </td>
+                </tr>
+            </div>
+
+            <!-- User Role field -->
+            <div class="form-group">
+                <tr>
+                    <label for="userRole_field">Your Role</label>
+                    <td>
+                        <input name="userRole"  type="userRole"  class="form-control"  id="userRole_field" placeholder="Enter Your Role Here" th:value="${userRole}" required/>
+                    </td>
+                </tr>
+            </div>
+
+            <!-- Balance field -->
+            <div class="form-group">
+                <tr>
+                    <label for="balance_field"> Balance </label>
+                    <td>
+                        <input name="balance"  type="balance"  class="form-control"  id="balance_field" placeholder="Enter Balance Here" th:value="${email}" required/>
+                    </td>
+                </tr>
+            </div>
+
+            <tr>
+                <td colspan="2"><button type="submit" class="btn btn-info">Save</button> </td>
+            </tr>
+        </form>
+    </div>
+</div>
+</body>
+</html>
